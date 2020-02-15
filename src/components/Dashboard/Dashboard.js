@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
-const Dashboard = () => {
-    return ( <h1>Hello World</h1> );
+
+class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+    }
+    componentDidMount() {
+        axios.get('/api/homes');
+    }
+    render() { 
+        return ( <h1>Hello World</h1> );
+    }
 }
 
 const mapStateToProps = state => {
